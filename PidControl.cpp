@@ -33,7 +33,7 @@ void PidControl::setGoal(float goal){
 /**
  * Returns current error
  */
-int PidControl::getError(){
+float PidControl::getError(){
   noInterrupts();
   float err = setpoint - *processVariable;
   interrupts();
@@ -45,7 +45,7 @@ int PidControl::getError(){
  */
 bool PidControl::isInTolerance(float errorTolerance){
   float err = getError();
-  return ((err>-errorTolerance)&&(err<errorTolerance);
+  return (err>-errorTolerance)&&(err<errorTolerance);
 }
 
 /**

@@ -16,7 +16,7 @@ class PidControl{
     PidControl(float *input);
     PidControl(float *input, float goal);
     void setGoal(float goal);
-    int getError();
+    float getError();
     bool isInTolerance(float errorTolerance);
     bool isInTolerance();
     void updatePid();
